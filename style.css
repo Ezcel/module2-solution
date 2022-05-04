@@ -1,0 +1,276 @@
+*,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+html {
+  margin: 0 10%;
+  background-image: linear-gradient(
+    1100deg,
+    rgb(240, 84, 84),
+    rgb(230, 173, 67)
+  );
+  background-attachment: fixed;
+}
+body {
+  background: #fff;
+}
+main {
+  display: grid;
+  grid-template-rows: 300px 1fr;
+  grid-template-columns: 300px 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+}
+nav {
+  width: 200px;
+  margin-left: 30px;
+  animation-name: slide-in-left;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+nav a {
+  text-decoration: none;
+  display: block;
+  color: blue;
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 18px;
+  width: 200px;
+}
+nav a:hover,
+a:focus {
+  background-color: rgba(114, 114, 114, 0.261);
+  color: #000;
+  font-weight: 600;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+}
+nav a hr {
+  border: 0.5px solid rgba(114, 114, 114, 0.261);
+}
+nav a:nth-child(1) {
+  font-weight: bolder;
+}
+nav:hover a:nth-child(1) {
+  font-size: 30px;
+}
+header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0 0 50px;
+  background-image: url(images/pexels-chris-peeters-12838.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 20px;
+}
+li {
+  color: blue;
+}
+li span {
+  color: #000;
+}
+.logo {
+  background: blue;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  text-align: center;
+  padding: 15px 10px;
+  align-self: flex-start;
+  animation-name: colors;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+.logo h1 {
+  font-size: 80px;
+  font-weight: 800;
+  margin-top: -10px;
+  padding: 0;
+  letter-spacing: -0.1em;
+}
+.logo p {
+  font-size: 14px;
+  margin-top: -20px;
+}
+#top {
+  background: rgba(255, 255, 255, 0.618);
+  align-self: flex-end;
+  width: 80%;
+  padding: 15px;
+}
+p.head {
+  background: blue;
+  color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+p {
+  margin-bottom: 20px;
+  line-height: 1.4em;
+}
+p#one {
+  font-weight: 600;
+}
+#one img {
+  width: 150px;
+  float: right;
+}
+.fitness_tailored,
+.intro {
+  padding-right: 20px;
+}
+.fitness_tailored {
+  animation: slide-in-right 2s ease;
+  -webkit-animation: slide-in-right 2s ease;
+}
+.intro {
+  animation: slide-in-down 2s ease;
+  -webkit-animation: slide-in-down 2s ease;
+}
+@media (max-width: 1300px) {
+  html {
+    margin: 0;
+  }
+}
+@media (max-width: 950px) {
+  main {
+    grid-template-rows: 250px 1fr;
+    grid-template-columns: 250px 1fr;
+
+    grid-column-gap: 0;
+  }
+  .intro,
+  .fitness_tailored {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    padding: 0 50px;
+  }
+}
+@media (max-width: 650px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .intro,
+  .fitness_tailored,
+  nav {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0 15%;
+  }
+  nav {
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+    width: 60%;
+  }
+  nav a {
+    width: 100%;
+  }
+  .logo {
+    background: blue;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    align-self: center;
+    margin: 0;
+  }
+  .logo h1 {
+    font-size: 80px;
+    font-weight: 800;
+    margin-top: -10px;
+    padding: 0;
+    letter-spacing: -0.1em;
+  }
+  .logo p {
+    font-size: 14px;
+    margin-top: -20px;
+  }
+  header {
+    flex-direction: column;
+  }
+  #top {
+    background: rgba(255, 255, 255, 0.618);
+    align-self: flex-end;
+    width: 100vw;
+    font-size: 18px;
+    padding: 15px 15%;
+    text-align: left;
+  }
+}
+@keyframes colors {
+  0% {
+    background-color: red;
+  }
+  20% {
+    background-color: orange;
+  }
+  40% {
+    background-color: yellow;
+  }
+  60% {
+    background-color: green;
+  }
+  80% {
+    background-color: blue;
+  }
+  100% {
+    background-color: violet;
+  }
+}
+@keyframes slide-in-down {
+  from {
+    position: relative;
+    top: 900px;
+  }
+  to {
+    position: relative;
+    bottom: 0;
+  }
+}
+@keyframes slide-in-left {
+  from {
+    position: relative;
+    left: -1000px;
+  }
+  to {
+    position: relative;
+    left: 0;
+  }
+}
+@keyframes slide-in-right {
+  from {
+    position: relative;
+    right: -900px;
+  }
+  to {
+    position: relative;
+    right: 0;
+  }
+}
